@@ -9,7 +9,7 @@ import java.security.NoSuchAlgorithmException;
  * @author cocowwy.cn
  * @create 2022-05-05-11:45
  */
-public class WeixinCheckoutUtil {
+public class WxCheckoutUtil {
     @Value("${wx.token}")
     private static String token;
 
