@@ -30,7 +30,8 @@ public interface WxEventHandler {
      * 预留后置操作
      * @param event 事件
      */
-    default void after(WxEventPushDto event) {
+    default String after(WxEventPushDto event) {
+        return "";
     }
 
     /**
@@ -39,8 +40,8 @@ public interface WxEventHandler {
      */
     void doHandler(WxEventPushDto event);
 
-    default void handler(WxEventPushDto event) {
+    default String handler(WxEventPushDto event) {
         doHandler(before(event));
-        after(event);
+        return after(event);
     }
 }

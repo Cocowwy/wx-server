@@ -34,16 +34,16 @@ public class WxEventDistributor {
      * 逻辑处理
      * @param wxEvent 事件信息
      */
-    public void handle(WxEventPushDto wxEvent) {
+    public String handle(WxEventPushDto wxEvent) {
         if (Objects.isNull(wxEvent) || Objects.isNull(wxEvent.getEvent())) {
-            return;
+            return "";
         }
 
         WxEventHandler wxEventHandler = routeMap.get(wxEvent.getEvent());
         if(Objects.isNull(wxEventHandler)){
-            return;
+            return "";
         }
 
-        wxEventHandler.handler(wxEvent);
+        return wxEventHandler.handler(wxEvent);
     }
 }

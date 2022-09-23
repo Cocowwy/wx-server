@@ -41,7 +41,7 @@ public class WxController {
         WxPushBaseDto event = WxSvlzUtil.svlz2Base(xml2Map);
         // 如果是事件类型
         if (event.getMsgType().equals(WxMsgTypeEnum.event.name())) {
-            wxEventDistributor.handle(WxSvlzUtil.svlz2Event(xml2Map));
+            return wxEventDistributor.handle(WxSvlzUtil.svlz2Event(xml2Map));
         }
         return "";
     }
