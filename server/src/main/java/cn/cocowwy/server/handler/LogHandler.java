@@ -23,3 +23,5 @@ public class LogHandler extends AbsWxMsgHandler {
     }
 
 }
+
+// test1
